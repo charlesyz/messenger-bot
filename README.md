@@ -6,7 +6,7 @@ Currently configured to send a message at 12:30 every day. If the message fails 
 
 ## Getting Started
 
-1. Create a `config.py` file in the same folder as `charles_bot.py` with the following information:
+1. Create a `config.py` file in the same folder as `messenger_bot.py` with the following information:
 ```python
 PSID="<PSID>"                   # PSID (Page Scoped ID) of the intended recipient
 ACCESS_TOKEN="<ACCESS_TOKEN>"   # Access token of the source page
@@ -16,7 +16,7 @@ MESSAGE = "<MESSAGE>"           # The message to send
 2. Set up the chrontab
 ```
 crontab -e
-*/30 * * * * cd <PATH_TO_DIR>/charles-bot && python3 charles_bot.py
+*/30 * * * * cd <PATH_TO_REPO> && python3 messenger_bot.py
 ```
 
 This crontab will run the script once every thirty minutes. On every run, the script will:
