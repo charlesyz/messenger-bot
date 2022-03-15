@@ -52,7 +52,7 @@ def main():
         send_and_log()
     elif datetime.fromisoformat(log[-1]['timestamp']).date() != now.date():
         # Send notice on new day at the right time
-        if now.time().hour >= 12 and now.time().minute >= 29:
+        if now.time().hour > 12 or (now.time().hour == 12 and now.time().minute >= 25):
             send_and_log()
     elif log[-1]['success'] == False:
         # Retry after failure
